@@ -21,7 +21,7 @@ class LanguagePack::Helpers::YarnInstaller
   def install
     Dir.mktmpdir do |dir|
       Dir.chdir(dir) do
-        @fetcher.fetch_untar(@url, "yarn-#{@version}")
+        @fetcher.fetch_untar(@url)
       end
 
       FileUtils.mv("#{dir}/yarn-#{@version}", name)
